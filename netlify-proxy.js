@@ -1,10 +1,12 @@
 exports.handler = async function(event, context) {
   // Set CORS headers to allow requests from your domain
-  const headers = {
-    "Access-Control-Allow-Origin": "*", // In production, set this to your specific domain
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS"
-  };
+// In webhook-proxy.js
+const headers = {
+  "Access-Control-Allow-Origin": "https://ora-owjy.onrender.com", // Specifically allow your domain
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS"
+};
+
   
   // Handle preflight OPTIONS request
   if (event.httpMethod === "OPTIONS" ) {
